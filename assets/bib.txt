@@ -1,0 +1,7 @@
+@InProceedings{Mahmood_2022_NeurIPS,
+    author    = {Mahmood, Rafid and Lucas, James and Alvarez, Jose M. and Fidler, Sanja and Law, Marc T.},
+    title     = {Optimizing Data Collection for Machine Learning},
+    booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+    month     = {November},
+    year      = {2022}
+}
