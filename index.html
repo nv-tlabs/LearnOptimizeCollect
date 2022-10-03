@@ -302,10 +302,10 @@ figure {
     <div id="authors">
         <div class="author-row">
             <div class="col-5 text-center"><a href="https://rafidrm.github.io/">Rafid Mahmood</a><sup>1*</sup></div>
-            <div class="col-5 text-center"><a href="https://cs.toronto.edu/~jlucas/">James Lucas</a><sup>1,2,3</sup></div>
+            <div class="col-5 text-center"><a href="https://www.cs.toronto.edu/~jlucas/">James Lucas</a><sup>1,2,3</sup></div>
             <div class="col-5 text-center"><a href="https://alvarezlopezjosem.github.io/">Jose M. Alvarez</a><sup>1</sup></div>
             <div class="col-5 text-center"><a href="https://www.cs.utoronto.ca/~fidler/">Sanja Fidler</a><sup>1,2,3</sup></div>
-            <div class="col-5 text-center"><a href="https://www.cs.utoronto.edu/~law/">Marc T. Law</a><sup>1</sup></div>
+            <div class="col-5 text-center"><a href="http://www.cs.toronto.edu/~law/">Marc T. Law</a><sup>1</sup></div>
         </div>
 
         <div class="affil-row">
@@ -319,11 +319,15 @@ figure {
 
         <div style="clear: both">
             <div class="paper-btn-parent">
+            <a class="supp-btn" href="assets/main.pdf">
+                <span class="material-icons"> description </span> 
+                PDF 
+            </a>
+            <!--
             <a class="supp-btn" href="https://arxiv.org/abs/2207.01725">
                 <span class="material-icons"> description </span> 
                 ArXiv 
             </a>
-            <!--
             <a class="supp-btn" href="assets/CVPR_2022_poster.pdf">
                 <span class="material-icons"> description </span> 
                   Poster
@@ -418,8 +422,21 @@ figure {
     <section id="problem">
     <h2>Main Problem</h2>
     <hr>
+        <p>
+            <b>
+            There is an industry folklore that
+            <a href="https://venturebeat.com/ai/why-do-87-of-data-science-projects-never-make-it-into-production/">
+                87% of AI systems in industry do not make it to production.
+            </a>
+            Data collection is a fundamental challenge. For example, a 2019 survey revealed
+            <a href="https://content.alegion.com/dimensional-researchs-survey">
+                51% of enterprise teams struggled to collect enough data for their models.
+            </a>
+            </b> 
+        </p>
+
         <ul class="insight">
-            <b>Motivating Example</b>
+            <b>Example.</b>
             A startup is developing an object detector for use in autonomous vehicles within the next T=5 months. 
             Their model must achieve a mean Average Precision greater than V*=95% on a pre-determined validation 
             set or else they will lose an expected profit of P = $1,000,000. Collecting training data requires 
@@ -458,17 +475,18 @@ figure {
         <p>
             In each round, we first estimate the probability distribution of how much data we need
             by bootstrap resampling different scaling laws and fitting a Density Estimation model.
-            We then solve an optimization problem to minimize the likelihood of not collecting
-            enough data (obtained from the DE model) plus the total collection cost. This objective
-            is differentiable and can be minimized with gradient descent.
+            We then solve a differentiable optimization problem to minimize the likelihood of not collecting
+            enough data (obtained from the DE model) plus the total collection cost. 
+            <!-- This objective is differentiable.
+            -->
         </p>
-    <h3>Learning the data requirement distribution</h3>
+    <h3>1) Learning the data requirement distribution</h3>
         <figure style="width: 90%;">
             <a href="assets/LearnAnimation.gif">
                 <img width="100%" src="assets/LearnAnimation.gif">
             </a>
         </figure>
-    <h3>Optimizing how much data to collect</h3>
+    <h3>2) Optimizing how much data to collect</h3>
         <figure style="width: 90%;">
             <a href="assets/OptimizeAnimation.gif">
                 <img width="100%" src="assets/OptimizeAnimation.gif">
